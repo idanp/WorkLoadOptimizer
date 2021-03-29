@@ -6,5 +6,6 @@ class WorkerAbstract(ABC):
         Each application should implement worker that know how to work and consume the equivalent work message
     """
 
-    def work(self, queue):
+    @abstractmethod
+    def work(self, msg):
         pass

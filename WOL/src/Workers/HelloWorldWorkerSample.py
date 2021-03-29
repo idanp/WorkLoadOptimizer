@@ -1,5 +1,5 @@
-from WorkerAbs import *
 import logging
+from  WOL.src.WorkerAbs import *
 
 WORKER_DRIVER_PREFIX = "Worker-Driver-HelloWorld:  "
 class WorkerImpl(WorkerAbstract):
@@ -12,6 +12,9 @@ class WorkerImpl(WorkerAbstract):
         txt = payload['text']
 
         if capital_yes_no:
-            logging.info(txt.upper())
+            print(txt.upper())
         else:
-            logging.info(txt)
+            print(txt)
+
+def init():
+    return WorkerImpl()

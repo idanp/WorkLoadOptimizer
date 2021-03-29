@@ -1,7 +1,7 @@
-from MessageCreatorAbs import *
 #from Utils.MetricHandler import *
+from WOL.src.MessageCreatorAbs import *
 
-class MessageCreator(MessageCreatorAbstract):
+class HelloWorldMessageCreator(MessageCreatorAbstract):
 
     def __init__(self, params):
         super().__init__(params)
@@ -29,6 +29,9 @@ class MessageCreator(MessageCreatorAbstract):
             )
 
             queue.put(msg)
+
+def init(params):
+    return HelloWorldMessageCreator(params)
 
 
 

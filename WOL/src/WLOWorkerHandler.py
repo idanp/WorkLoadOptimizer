@@ -1,6 +1,8 @@
+#!/usr/bin/env python
 import datetime
 import logging
 import importlib
+import importlib.util
 
 ORCHESTRATION_PREFIX = 'OptimizerWorkLoad - '
 
@@ -32,9 +34,10 @@ def work(queue, worker_base_path):
             driver_to_create = work_msg['params']["worker_driver"]
 
             try:
-                clazz = getattr(importlib.import_module(f'{worker_base_path}.{driver_to_create}', package=None),
-                                'WorkerImpl')
-                worker_driver = clazz()
+                spec = importlib.util.spec_from_file_location('init', f'{worker_base_path}/{driver_to_create}.py')
+                clazz = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(clazz)
+                worker_driver = clazz.init()
             except Exception as e:
                 logging.error(f"{ORCHESTRATION_PREFIX}Could not find worker driver  driver : {driver_to_create}")
                 raise Exception(e)
