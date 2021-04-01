@@ -1,5 +1,5 @@
 #from Utils.MetricHandler import *
-from WOL.src.MessageCreatorAbs import *
+from WLO.src.MessageCreatorAbs import *
 
 class HelloWorldMessageCreator(MessageCreatorAbstract):
 

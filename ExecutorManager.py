@@ -6,9 +6,9 @@ import pathlib
 import multiprocessing
 import json
 import os
-from WOL.src.Utils.Utils import *
+from WLO.src.Utils.Utils import *
 
-from WOL.src.WLOWorkerHandler import *
+from WLO.src.WLOWorkerHandler import *
 
 
 

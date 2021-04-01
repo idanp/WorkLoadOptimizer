@@ -1,5 +1,5 @@
 import logging
-from  WOL.src.WorkerAbs import *
+from  WLO.src.WorkerAbs import *
 
 WORKER_DRIVER_PREFIX = "Worker-Driver-HelloWorld:  "
 class WorkerImpl(WorkerAbstract):
