@@ -1,6 +1,6 @@
 from colorama import Fore
 from colorama import Style
-import multiprocessing
+
 
 
 def prep_text(txt,with_line_breaker=True):
@@ -12,6 +12,7 @@ def prep_text(txt,with_line_breaker=True):
 def prep_title(txt):
     return f'\n{Fore.BLUE}{txt}{Style.RESET_ALL}\n'
 
+import multiprocessing
 task_queue = None
 def get_syncro_queue():
     global task_queue

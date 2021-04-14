@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='WLO',
-     version='0.0.4',
-     scripts=['ExecutorManager.py'],
+     version='0.0.10',
+     scripts=['ExecutorManager'],
      author="Idan Perez",
      author_email="kimpatz@gmail.com",
      description="This is Workload Optimizer framework - more can be found at the git page",
@@ -15,6 +15,7 @@ setuptools.setup(
      long_description_content_type="text/markdown",
      url="https://github.com/idanp/OWL",
      packages=setuptools.find_packages(),
+     install_requires=['colorama'],
      classifiers=[
          "Programming Language :: Python :: 3",
          "License :: OSI Approved :: MIT License",
